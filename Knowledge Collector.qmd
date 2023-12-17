@@ -1,11 +1,56 @@
 ---
 title: "Knowledge Collector"
+subtitle: "Version 1.0"
+author: "Alessandro Speranza"
+date: "2023/12/17"
+date-modified: "2023/12/17"
+title-block-banner: true
+format: 
+  html:
+    theme: flatly
+    code-fold: true
+    toc: true
+    toc-location: left
+    toc-depth: 5
+    number-sections: true
+    number-depth: 5
+    smooth-scroll: true
+editor: source
 ---
 
-## Quarto
+## Quarto Publishing System
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+### Tips & Hacks
 
-```{r}
-1 + 1
-```
+- 6 Productivity Hacks for Quarto <https://posit.co/blog/6-productivity-hacks-for-quarto/>    
+- Quarto at Work: Streamline Reports and Share Insights <https://posit.co/blog/quarto-at-work/>
+
+### GitHub Actions
+
+- R-Ladies Cologne & Paris (English) - GitHub Actions and Quarto - Angelica Becerra <https://www.youtube.com/watch?v=aqTM450K6jE&ab_channel=R-LadiesGlobal>
+
+
+
+### Quarto Blog
+
+#### Hints
+
+- Why a blog? <https://ivelasq.quarto.pub/building-a-blog-with-quarto/intro/why-blog/>
+
+#### Design
+
+- The ultimate guide to starting a Quarto blog <https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html>
+- Building a Blog with Quarto \| Led by Isabella Velásquez, RStudio <https://www.youtube.com/watch?v=CVcvXfRyfE0&ab_channel=PositPBC>
+- Meetup | Deepsha Menghani, Microsoft | Create Your Data Science Portfolio with Quarto <https://www.youtube.com/watch?v=xtSFXtDf4cM&ab_channel=PositPBC>
+
+
+### Quarto Dashboard
+
+#### Design
+
+
+## Data visualization
+
+### ggplot2
+
+- How to Create Beautiful Charts with R & ggplot2 (Beginner's Guide) <https://www.youtube.com/watch?v=IWXcw6NHM6E&ab_channel=AlbertRapp>
