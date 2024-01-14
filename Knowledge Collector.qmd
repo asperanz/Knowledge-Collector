@@ -2,55 +2,145 @@
 title: "Knowledge Collector"
 subtitle: "Version 1.0"
 author: "Alessandro Speranza"
-date: "2023/12/17"
-date-modified: "2023/12/17"
+date: "2023/12/24"
+date-modified: "2023/12/24"
 title-block-banner: true
 format: 
   html:
-    theme: flatly
+    theme: 
+      - flatly
+      - custom.scss
     code-fold: true
     toc: true
-    toc-location: left
+    toc-location: right
     toc-depth: 5
-    number-sections: true
+    number-sections: false
     number-depth: 5
     smooth-scroll: true
 editor: source
 ---
 
-## Quarto Publishing System
+Usare Posit Cloud Guide come esempio per configurare il toc.
 
-### Tips & Hacks
+## Keys
 
-- 6 Productivity Hacks for Quarto <https://posit.co/blog/6-productivity-hacks-for-quarto/>    
-- Quarto at Work: Streamline Reports and Share Insights <https://posit.co/blog/quarto-at-work/>
+- [GitHub Actions for CI/CD of a Shiny App](https://www.youtube.com/watch?v=oTj-F0IniwA&t=36s&ab_channel=CometML)
+- [Nicola Rennie: Finding #RStats resources with Shiny and GitHub Actions](https://www.youtube.com/watch?v=oGRGzyYLQXU&ab_channel=Appsilon)
+- [Using flexdashboard to create a GitHub Actions-powered YouTube feed](https://ivelasq.rbind.io/blog/automated-youtube-dashboard/)
+- [asperanz/Tidyverse-and-Data-Visualization](https://github.com/asperanz/Tidyverse-and-Data-Visualization)
+
+
+## Posit Cloud
+
+- [Posit Cloud Guide](https://posit.cloud/learn/guide?mkt_tok=NzA5LU5YTi03MDYAAAGOe7dZaccbpkrysLJdtI8x7Yj_SLsY38QXQsIpF_1oRdKJo1PH2VZpxRrCpmBeEfb6MfiQTXhUEHX-fL9cQgnSBfbfOGnl3W6Y--tIfbJznJM#publish)
+- [Posit Cloud Essentials | Ep 1: Getting Started](https://www.youtube.com/watch?v=-fzwm4ZhVQQ&t=325s&ab_channel=PositPBC)
+- [Posit Cloud Essentials | Ep 2: Managing Data Projects with Spaces](https://www.youtube.com/watch?v=JdOn8_Co8VI&ab_channel=PositPBC)
+- [Posit Cloud Essentials | Ep 3: Speed up your data workflows with Project Templates](https://www.youtube.com/watch?v=ppfYco3Dhkc&ab_channel=PositPBC)
+- [Posit Cloud Essentials | Ep 4: Usage analytics and space management with library(rscloud)](https://www.youtube.com/watch?v=Ry1-UqmNa6g&ab_channel=PositPBC)
+- [Posit Cloud Essentials | Ep 5: Teaching data courses and workshops](https://www.youtube.com/watch?v=KJZM-OlMcDI&ab_channel=PositPBC)
+
 
 ### GitHub Actions
 
-- R-Ladies Cologne & Paris (English) - GitHub Actions and Quarto - Angelica Becerra <https://www.youtube.com/watch?v=aqTM450K6jE&ab_channel=R-LadiesGlobal>
+- [Running code while we're sleeping: Introduction to GitHub Actions for R Users by Beatriz Milz](https://www.youtube.com/watch?v=ZANp3oqcH_0&ab_channel=R-LadiesAbuja)
+- [R-Ladies Cologne & Paris (English) - GitHub Actions and Quarto - Angelica Becerra](https://www.youtube.com/watch?v=aqTM450K6jE&ab_channel=R-LadiesGlobal)
 
+
+## Quarto Publishing System
+
+### Introduction, Tips & Hacks
+
+- [Quarto at Work: Streamline Reports and Share Insights](https://posit.co/blog/quarto-at-work/?mkt_tok=NzA5LU5YTi03MDYAAAGMZGQn9YzmPxyDS1Yq-zQsqWTh1wuxyIUiiq-xL5vzBPm9aJj0K8G3g75kxbByG0gqLG_rqjEECO3D2c3pZUfK74qkDHi7u2Jirlxm-cfTVvI)
+- [R-Ladies STL: Introduction to Quarto with Isabella Velásquez](https://www.youtube.com/watch?v=y6_xMIBKuP4&ab_channel=RLadiesSTL)
+- [R-Ladies Bergen & R-Ladies Cologne (English) - Hello, Quarto - Mine Çetinkaya-Rundel](https://www.youtube.com/watch?v=l3wKGqm2uYs&ab_channel=R-LadiesGlobal)
+- [6 Productivity Hacks for Quarto](https://posit.co/blog/6-productivity-hacks-for-quarto/)   
+- [Quarto at Work: Streamline Reports and Share Insights](https://posit.co/blog/quarto-at-work/)
 
 
 ### Quarto Blog
 
 #### Hints
 
-- Why a blog? <https://ivelasq.quarto.pub/building-a-blog-with-quarto/intro/why-blog/>
+- [Why a blog?](https://ivelasq.quarto.pub/building-a-blog-with-quarto/intro/why-blog/)
 
 #### Design
 
-- The ultimate guide to starting a Quarto blog <https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html>
-- Building a Blog with Quarto \| Led by Isabella Velásquez, RStudio <https://www.youtube.com/watch?v=CVcvXfRyfE0&ab_channel=PositPBC>
-- Meetup | Deepsha Menghani, Microsoft | Create Your Data Science Portfolio with Quarto <https://www.youtube.com/watch?v=xtSFXtDf4cM&ab_channel=PositPBC>
+- [The ultimate guide to starting a Quarto blog](https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html)
+- [Building a Blog with Quarto \| Led by Isabella Velásquez, RStudio](https://www.youtube.com/watch?v=CVcvXfRyfE0&ab_channel=PositPBC)
+- [Meetup | Deepsha Menghani, Microsoft | Create Your Data Science Portfolio with Quarto](https://www.youtube.com/watch?v=xtSFXtDf4cM&ab_channel=PositPBC)
+
+
+### Quarto Documents
+
+- [Taylor's Towering Year](https://colorado.posit.co/rsc/tay-swift-tour/?mkt_tok=NzA5LU5YTi03MDYAAAGPv_EvhmRi4jBg5ECMz7mBaCgDhPAjvRJbN6WIm_W8CcPZNcuTp9GsFDQGPGusv58fbtIh3c7Q_KjpcdgUqeUku4Uisk7QVMfULHjM22nYeLQ)
 
 
 ### Quarto Dashboard
 
-#### Design
+- [Quarto Dashboards | Charles Teague | Posit](https://www.youtube.com/watch?v=_VGJIPRGTy4&ab_channel=PositPBC)
+
+
+### Quarto Website
+
+- [Thoughts on Building a Quarto Website](https://lsinks.github.io/posts/2023-11-01-website-building/website.html)
+
 
 
 ## Data visualization
 
+- [R-Ladies New York (English) - Behind the scenes of visual journalism - Will Chase](https://www.youtube.com/watch?v=fbG5YhV2GQ4&ab_channel=R-LadiesGlobal)
+
 ### ggplot2
 
-- How to Create Beautiful Charts with R & ggplot2 (Beginner's Guide) <https://www.youtube.com/watch?v=IWXcw6NHM6E&ab_channel=AlbertRapp>
+- [How to Create Beautiful Charts with R & ggplot2 (Beginner's Guide)](https://www.youtube.com/watch?v=IWXcw6NHM6E&ab_channel=AlbertRapp)
+- [A Step-by-Step Guide to Build Your Own ggplot Legends](https://www.youtube.com/watch?v=vD3g7-ecIKg&ab_channel=AlbertRapp)
+- [STOP Wasting Space on HUGE LEGENDS | A ggplot2 step-by-step guide](https://www.youtube.com/watch?v=X1gkw--k5Tg&ab_channel=AlbertRapp)
+- [CREATING CHRISTMAS CARDS WITH R](https://realworlddatascience.net/ideas/tutorials/posts/2023/12/12/xmas-cards.html)
+- [R-Ladies Cambridge (English)– Beautifully annotated: enhancing your ggplots with text– Cara Thompson](https://www.youtube.com/watch?v=TGU-ekc8Tyg&ab_channel=R-LadiesGlobal)
+- [R-Ladies Rome (English) - (Even More) Exciting Data Visualizations with ggplot2 Extensions](https://www.youtube.com/watch?v=YKF9fvi-01E&ab_channel=R-LadiesGlobal)
+- [R-Ladies Rome (Italian/English) - Data Visualization Practice Session](https://www.youtube.com/watch?v=sLxp-ZhwMbE&ab_channel=RLadiesRome)
+- [My Favorite ggplot2 Extension Packages](https://www.youtube.com/watch?v=8ikFe82Mb1I&ab_channel=R-LadiesTunis)
+- [R-Ladies Rome (English) - Ten tips for better text: typography meets ggplot and friends](https://www.youtube.com/watch?v=imae78qSuXw&ab_channel=R-LadiesGlobal) **<span style="color:red;">DD</span>**
+- [R-Ladies Cambridge (English) - How to create interactive ggplots with ggiraph - Tanya Shapiro](https://www.youtube.com/watch?v=RapjCA0L0ck&t=109s&ab_channel=R-LadiesGlobal) **<span style="color:red;">DD</span>**
+- [Dataviz for Scientists](https://dv4sci.otho.app/)
+
+### Observable
+
+- [Introduction to Observable Plot with Tanya Shapiro](https://www.youtube.com/watch?v=_4dTkIzGQs4&ab_channel=R-LadiesPhilly)
+
+
+## Tables
+
+- [New in {gt} 0.9.0: Interactive tables](https://posit.co/blog/new-in-gt-0-9-0-interactive-tables/?mkt_tok=NzA5LU5YTi03MDYAAAGMZGQn9Sib3TcN1OQffMUtsNG9bU0NA2Y_A2Af0v_BrfYIuQt7-T_UP30_RO0NleixiWXP8ebDEO1AIP8i89grtCnq-hwcASFv-YwbXRhXLVo)
+- [Color coding your data in {gt} 0.9.0](https://posit.co/blog/color-coding-your-data-in-gt-0-9-0/?mkt_tok=NzA5LU5YTi03MDYAAAGMQEmsLJ2dN96sAA09-YuSGC5XN3wUy7mmy_JaJFrByKKnJqh-aJPGmoKfSMwbM4pCEIHSlBJKGhK69749fY7NVQ8jTBfe8z6AXPr7NDBTYXY)
+- [Big changes to making summary rows in {gt} 0.9.0](https://posit.co/blog/big-changes-to-making-summary-rows-in-gt-0-9-0/?mkt_tok=NzA5LU5YTi03MDYAAAGMDPfgoZbHmHmJN-17QKOyG6EsK2KyHX3_k0jf4zaC-nwoaXkwLFh3-GKrCnTobqWxI6G6G4To6NVlhkYglB__2Z6CzbSXXzYA6JtRpEQiT9k)
+
+
+## GeoSpatial Data Analysis
+
+- [Maps in R For Everyone! High Powered Geospatial Analysis Made Easy w/ Art Steinmetz - nyhackr](https://www.youtube.com/watch?v=2gM9ahn0MFY&ab_channel=LanderAnalytics)
+- [R-Ladies Cambridge (English)-Exploratory visualization of spatial data with {mapview}-Sharon Machils](https://www.youtube.com/watch?v=o25UmvIMXiU&t=42s&ab_channel=R-LadiesGlobal)
+- [Create interactive 2023 Toronto mayoral election map in R with leaflet](https://www.asterhu.com/post/2023-07-11-toronto-mayor-by-election-analysis/index.html)
+
+
+## Text Mining
+
+- [Topic modeling for Taylor Swift Eras](https://www.youtube.com/watch?v=rXDv0ZuX0Fc&ab_channel=JuliaSilge)
+
+
+## Statistics
+
+- [OpenIntro Statistics, Companion Notebook (Intro for Students)](https://www.youtube.com/watch?v=52QwojLIjaU&ab_channel=OpenIntroOrg)
+
+
+## Shiny
+
+- [webR 0.2: R Packages and Shiny for WebAssembly | George Stagg | Posit](https://www.youtube.com/watch?v=CRKuH3ISPgI&ab_channel=PositPBC)
+- [How to run Shiny Apps in your browser with WebR (webr.bundle)](https://www.youtube.com/watch?v=ZvodHcGsgrU&ab_channel=AndresQuintero)
+- [Creating a Serverless R Shiny App using Quarto with R Shinylive ("Include" method)](https://www.youtube.com/watch?v=6y2FnAugP8E&ab_channel=TheCoatlessProfessor)
+- [Shiny web app Tutorial | How to add videos and images in shiny | R Programming Tutorial](https://www.youtube.com/watch?v=Ka2pWqXS1WA&ab_channel=DataScienceTutorials)
+
+
+## Databricks x Posit
+
+- [Databricks x Posit | Improved Productivity for your Data Teams](https://www.youtube.com/watch?v=iShpyDxzMeE&t=1349s&ab_channel=PositPBC)

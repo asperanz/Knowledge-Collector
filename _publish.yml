@@ -1,0 +1,4 @@
+- source: Knowledge Collector.qmd
+  quarto-pub:
+    - id: d5f20fdf-272d-4ee2-8a26-bc4b78297d7b
+      url: 'https://asperanz.quarto.pub/knowledge-collector'

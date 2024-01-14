@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.528">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alessandro Speranza">
+<meta name="dcterms.date" content="2023-12-24">
+
+<title>Knowledge Collector</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Knowledge Collector_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Knowledge Collector_files/libs/quarto-html/quarto.js"></script>
+<script src="Knowledge Collector_files/libs/quarto-html/popper.min.js"></script>
+<script src="Knowledge Collector_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Knowledge Collector_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Knowledge Collector_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Knowledge Collector_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Knowledge Collector_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Knowledge Collector_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Knowledge Collector_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Knowledge Collector</h1>
+            <p class="subtitle lead">Version 1.0</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Alessandro Speranza </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 24, 2023</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">December 24, 2023</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#keys" id="toc-keys" class="nav-link active" data-scroll-target="#keys">Keys</a></li>
+  <li><a href="#posit-cloud" id="toc-posit-cloud" class="nav-link" data-scroll-target="#posit-cloud">Posit Cloud</a>
+  <ul>
+  <li><a href="#github-actions" id="toc-github-actions" class="nav-link" data-scroll-target="#github-actions">GitHub Actions</a></li>
+  </ul></li>
+  <li><a href="#quarto-publishing-system" id="toc-quarto-publishing-system" class="nav-link" data-scroll-target="#quarto-publishing-system">Quarto Publishing System</a>
+  <ul>
+  <li><a href="#introduction-tips-hacks" id="toc-introduction-tips-hacks" class="nav-link" data-scroll-target="#introduction-tips-hacks">Introduction, Tips &amp; Hacks</a></li>
+  <li><a href="#quarto-blog" id="toc-quarto-blog" class="nav-link" data-scroll-target="#quarto-blog">Quarto Blog</a>
+  <ul>
+  <li><a href="#hints" id="toc-hints" class="nav-link" data-scroll-target="#hints">Hints</a></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a></li>
+  </ul></li>
+  <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents">Quarto Documents</a></li>
+  <li><a href="#quarto-dashboard" id="toc-quarto-dashboard" class="nav-link" data-scroll-target="#quarto-dashboard">Quarto Dashboard</a></li>
+  <li><a href="#quarto-website" id="toc-quarto-website" class="nav-link" data-scroll-target="#quarto-website">Quarto Website</a></li>
+  </ul></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data visualization</a>
+  <ul>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2">ggplot2</a></li>
+  <li><a href="#observable" id="toc-observable" class="nav-link" data-scroll-target="#observable">Observable</a></li>
+  </ul></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#geospatial-data-analysis" id="toc-geospatial-data-analysis" class="nav-link" data-scroll-target="#geospatial-data-analysis">GeoSpatial Data Analysis</a></li>
+  <li><a href="#text-mining" id="toc-text-mining" class="nav-link" data-scroll-target="#text-mining">Text Mining</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
+  <li><a href="#shiny" id="toc-shiny" class="nav-link" data-scroll-target="#shiny">Shiny</a></li>
+  <li><a href="#databricks-x-posit" id="toc-databricks-x-posit" class="nav-link" data-scroll-target="#databricks-x-posit">Databricks x Posit</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Usare Posit Cloud Guide come esempio per configurare il toc.</p>
+<section id="keys" class="level2">
+<h2 class="anchored" data-anchor-id="keys">Keys</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=oTj-F0IniwA&amp;t=36s&amp;ab_channel=CometML">GitHub Actions for CI/CD of a Shiny App</a></li>
+<li><a href="https://www.youtube.com/watch?v=oGRGzyYLQXU&amp;ab_channel=Appsilon">Nicola Rennie: Finding #RStats resources with Shiny and GitHub Actions</a></li>
+<li><a href="https://ivelasq.rbind.io/blog/automated-youtube-dashboard/">Using flexdashboard to create a GitHub Actions-powered YouTube feed</a></li>
+<li><a href="https://github.com/asperanz/Tidyverse-and-Data-Visualization">asperanz/Tidyverse-and-Data-Visualization</a></li>
+</ul>
+</section>
+<section id="posit-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="posit-cloud">Posit Cloud</h2>
+<ul>
+<li><a href="https://posit.cloud/learn/guide?mkt_tok=NzA5LU5YTi03MDYAAAGOe7dZaccbpkrysLJdtI8x7Yj_SLsY38QXQsIpF_1oRdKJo1PH2VZpxRrCpmBeEfb6MfiQTXhUEHX-fL9cQgnSBfbfOGnl3W6Y--tIfbJznJM#publish">Posit Cloud Guide</a></li>
+<li><a href="https://www.youtube.com/watch?v=-fzwm4ZhVQQ&amp;t=325s&amp;ab_channel=PositPBC">Posit Cloud Essentials | Ep 1: Getting Started</a></li>
+<li><a href="https://www.youtube.com/watch?v=JdOn8_Co8VI&amp;ab_channel=PositPBC">Posit Cloud Essentials | Ep 2: Managing Data Projects with Spaces</a></li>
+<li><a href="https://www.youtube.com/watch?v=ppfYco3Dhkc&amp;ab_channel=PositPBC">Posit Cloud Essentials | Ep 3: Speed up your data workflows with Project Templates</a></li>
+<li><a href="https://www.youtube.com/watch?v=Ry1-UqmNa6g&amp;ab_channel=PositPBC">Posit Cloud Essentials | Ep 4: Usage analytics and space management with library(rscloud)</a></li>
+<li><a href="https://www.youtube.com/watch?v=KJZM-OlMcDI&amp;ab_channel=PositPBC">Posit Cloud Essentials | Ep 5: Teaching data courses and workshops</a></li>
+</ul>
+<section id="github-actions" class="level3">
+<h3 class="anchored" data-anchor-id="github-actions">GitHub Actions</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ZANp3oqcH_0&amp;ab_channel=R-LadiesAbuja">Running code while we’re sleeping: Introduction to GitHub Actions for R Users by Beatriz Milz</a></li>
+<li><a href="https://www.youtube.com/watch?v=aqTM450K6jE&amp;ab_channel=R-LadiesGlobal">R-Ladies Cologne &amp; Paris (English) - GitHub Actions and Quarto - Angelica Becerra</a></li>
+</ul>
+</section>
+</section>
+<section id="quarto-publishing-system" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-publishing-system">Quarto Publishing System</h2>
+<section id="introduction-tips-hacks" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-tips-hacks">Introduction, Tips &amp; Hacks</h3>
+<ul>
+<li><a href="https://posit.co/blog/quarto-at-work/?mkt_tok=NzA5LU5YTi03MDYAAAGMZGQn9YzmPxyDS1Yq-zQsqWTh1wuxyIUiiq-xL5vzBPm9aJj0K8G3g75kxbByG0gqLG_rqjEECO3D2c3pZUfK74qkDHi7u2Jirlxm-cfTVvI">Quarto at Work: Streamline Reports and Share Insights</a></li>
+<li><a href="https://www.youtube.com/watch?v=y6_xMIBKuP4&amp;ab_channel=RLadiesSTL">R-Ladies STL: Introduction to Quarto with Isabella Velásquez</a></li>
+<li><a href="https://www.youtube.com/watch?v=l3wKGqm2uYs&amp;ab_channel=R-LadiesGlobal">R-Ladies Bergen &amp; R-Ladies Cologne (English) - Hello, Quarto - Mine Çetinkaya-Rundel</a></li>
+<li><a href="https://posit.co/blog/6-productivity-hacks-for-quarto/">6 Productivity Hacks for Quarto</a><br>
+</li>
+<li><a href="https://posit.co/blog/quarto-at-work/">Quarto at Work: Streamline Reports and Share Insights</a></li>
+</ul>
+</section>
+<section id="quarto-blog" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-blog">Quarto Blog</h3>
+<section id="hints" class="level4">
+<h4 class="anchored" data-anchor-id="hints">Hints</h4>
+<ul>
+<li><a href="https://ivelasq.quarto.pub/building-a-blog-with-quarto/intro/why-blog/">Why a blog?</a></li>
+</ul>
+</section>
+<section id="design" class="level4">
+<h4 class="anchored" data-anchor-id="design">Design</h4>
+<ul>
+<li><a href="https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html">The ultimate guide to starting a Quarto blog</a></li>
+<li><a href="https://www.youtube.com/watch?v=CVcvXfRyfE0&amp;ab_channel=PositPBC">Building a Blog with Quarto | Led by Isabella Velásquez, RStudio</a></li>
+<li><a href="https://www.youtube.com/watch?v=xtSFXtDf4cM&amp;ab_channel=PositPBC">Meetup | Deepsha Menghani, Microsoft | Create Your Data Science Portfolio with Quarto</a></li>
+</ul>
+</section>
+</section>
+<section id="quarto-documents" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-documents">Quarto Documents</h3>
+<ul>
+<li><a href="https://colorado.posit.co/rsc/tay-swift-tour/?mkt_tok=NzA5LU5YTi03MDYAAAGPv_EvhmRi4jBg5ECMz7mBaCgDhPAjvRJbN6WIm_W8CcPZNcuTp9GsFDQGPGusv58fbtIh3c7Q_KjpcdgUqeUku4Uisk7QVMfULHjM22nYeLQ">Taylor’s Towering Year</a></li>
+</ul>
+</section>
+<section id="quarto-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-dashboard">Quarto Dashboard</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=_VGJIPRGTy4&amp;ab_channel=PositPBC">Quarto Dashboards | Charles Teague | Posit</a></li>
+</ul>
+</section>
+<section id="quarto-website" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-website">Quarto Website</h3>
+<ul>
+<li><a href="https://lsinks.github.io/posts/2023-11-01-website-building/website.html">Thoughts on Building a Quarto Website</a></li>
+</ul>
+</section>
+</section>
+<section id="data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization">Data visualization</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=fbG5YhV2GQ4&amp;ab_channel=R-LadiesGlobal">R-Ladies New York (English) - Behind the scenes of visual journalism - Will Chase</a></li>
+</ul>
+<section id="ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="ggplot2">ggplot2</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=IWXcw6NHM6E&amp;ab_channel=AlbertRapp">How to Create Beautiful Charts with R &amp; ggplot2 (Beginner’s Guide)</a></li>
+<li><a href="https://www.youtube.com/watch?v=vD3g7-ecIKg&amp;ab_channel=AlbertRapp">A Step-by-Step Guide to Build Your Own ggplot Legends</a></li>
+<li><a href="https://www.youtube.com/watch?v=X1gkw--k5Tg&amp;ab_channel=AlbertRapp">STOP Wasting Space on HUGE LEGENDS | A ggplot2 step-by-step guide</a></li>
+<li><a href="https://realworlddatascience.net/ideas/tutorials/posts/2023/12/12/xmas-cards.html">CREATING CHRISTMAS CARDS WITH R</a></li>
+<li><a href="https://www.youtube.com/watch?v=TGU-ekc8Tyg&amp;ab_channel=R-LadiesGlobal">R-Ladies Cambridge (English)– Beautifully annotated: enhancing your ggplots with text– Cara Thompson</a></li>
+<li><a href="https://www.youtube.com/watch?v=YKF9fvi-01E&amp;ab_channel=R-LadiesGlobal">R-Ladies Rome (English) - (Even More) Exciting Data Visualizations with ggplot2 Extensions</a></li>
+<li><a href="https://www.youtube.com/watch?v=sLxp-ZhwMbE&amp;ab_channel=RLadiesRome">R-Ladies Rome (Italian/English) - Data Visualization Practice Session</a></li>
+<li><a href="https://www.youtube.com/watch?v=8ikFe82Mb1I&amp;ab_channel=R-LadiesTunis">My Favorite ggplot2 Extension Packages</a></li>
+<li><a href="https://www.youtube.com/watch?v=imae78qSuXw&amp;ab_channel=R-LadiesGlobal">R-Ladies Rome (English) - Ten tips for better text: typography meets ggplot and friends</a> <strong><span style="color:red;">DD</span></strong></li>
+<li><a href="https://www.youtube.com/watch?v=RapjCA0L0ck&amp;t=109s&amp;ab_channel=R-LadiesGlobal">R-Ladies Cambridge (English) - How to create interactive ggplots with ggiraph - Tanya Shapiro</a> <strong><span style="color:red;">DD</span></strong></li>
+<li><a href="https://dv4sci.otho.app/">Dataviz for Scientists</a></li>
+</ul>
+</section>
+<section id="observable" class="level3">
+<h3 class="anchored" data-anchor-id="observable">Observable</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=_4dTkIzGQs4&amp;ab_channel=R-LadiesPhilly">Introduction to Observable Plot with Tanya Shapiro</a></li>
+</ul>
+</section>
+</section>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
+<ul>
+<li><a href="https://posit.co/blog/new-in-gt-0-9-0-interactive-tables/?mkt_tok=NzA5LU5YTi03MDYAAAGMZGQn9Sib3TcN1OQffMUtsNG9bU0NA2Y_A2Af0v_BrfYIuQt7-T_UP30_RO0NleixiWXP8ebDEO1AIP8i89grtCnq-hwcASFv-YwbXRhXLVo">New in {gt} 0.9.0: Interactive tables</a></li>
+<li><a href="https://posit.co/blog/color-coding-your-data-in-gt-0-9-0/?mkt_tok=NzA5LU5YTi03MDYAAAGMQEmsLJ2dN96sAA09-YuSGC5XN3wUy7mmy_JaJFrByKKnJqh-aJPGmoKfSMwbM4pCEIHSlBJKGhK69749fY7NVQ8jTBfe8z6AXPr7NDBTYXY">Color coding your data in {gt} 0.9.0</a></li>
+<li><a href="https://posit.co/blog/big-changes-to-making-summary-rows-in-gt-0-9-0/?mkt_tok=NzA5LU5YTi03MDYAAAGMDPfgoZbHmHmJN-17QKOyG6EsK2KyHX3_k0jf4zaC-nwoaXkwLFh3-GKrCnTobqWxI6G6G4To6NVlhkYglB__2Z6CzbSXXzYA6JtRpEQiT9k">Big changes to making summary rows in {gt} 0.9.0</a></li>
+</ul>
+</section>
+<section id="geospatial-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial-data-analysis">GeoSpatial Data Analysis</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=2gM9ahn0MFY&amp;ab_channel=LanderAnalytics">Maps in R For Everyone! High Powered Geospatial Analysis Made Easy w/ Art Steinmetz - nyhackr</a></li>
+<li><a href="https://www.youtube.com/watch?v=o25UmvIMXiU&amp;t=42s&amp;ab_channel=R-LadiesGlobal">R-Ladies Cambridge (English)-Exploratory visualization of spatial data with {mapview}-Sharon Machils</a></li>
+<li><a href="https://www.asterhu.com/post/2023-07-11-toronto-mayor-by-election-analysis/index.html">Create interactive 2023 Toronto mayoral election map in R with leaflet</a></li>
+</ul>
+</section>
+<section id="text-mining" class="level2">
+<h2 class="anchored" data-anchor-id="text-mining">Text Mining</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=rXDv0ZuX0Fc&amp;ab_channel=JuliaSilge">Topic modeling for Taylor Swift Eras</a></li>
+</ul>
+</section>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=52QwojLIjaU&amp;ab_channel=OpenIntroOrg">OpenIntro Statistics, Companion Notebook (Intro for Students)</a></li>
+</ul>
+</section>
+<section id="shiny" class="level2">
+<h2 class="anchored" data-anchor-id="shiny">Shiny</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=CRKuH3ISPgI&amp;ab_channel=PositPBC">webR 0.2: R Packages and Shiny for WebAssembly | George Stagg | Posit</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZvodHcGsgrU&amp;ab_channel=AndresQuintero">How to run Shiny Apps in your browser with WebR (webr.bundle)</a></li>
+<li><a href="https://www.youtube.com/watch?v=6y2FnAugP8E&amp;ab_channel=TheCoatlessProfessor">Creating a Serverless R Shiny App using Quarto with R Shinylive (“Include” method)</a></li>
+<li><a href="https://www.youtube.com/watch?v=Ka2pWqXS1WA&amp;ab_channel=DataScienceTutorials">Shiny web app Tutorial | How to add videos and images in shiny | R Programming Tutorial</a></li>
+</ul>
+</section>
+<section id="databricks-x-posit" class="level2">
+<h2 class="anchored" data-anchor-id="databricks-x-posit">Databricks x Posit</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=iShpyDxzMeE&amp;t=1349s&amp;ab_channel=PositPBC">Databricks x Posit | Improved Productivity for your Data Teams</a></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="Knowledge Collector_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
