@@ -141,6 +141,14 @@ Usare Posit Cloud Guide come esempio per configurare il toc.
 - [Shiny web app Tutorial | How to add videos and images in shiny | R Programming Tutorial](https://www.youtube.com/watch?v=Ka2pWqXS1WA&ab_channel=DataScienceTutorials)
 
 
-## Databricks x Posit
+## Web Scraping
 
-- [Databricks x Posit | Improved Productivity for your Data Teams](https://www.youtube.com/watch?v=iShpyDxzMeE&t=1349s&ab_channel=PositPBC)
+- [R for Data Science (2e) - 24  Web scraping](https://r4ds.hadley.nz/webscraping)
+- [Stats and R - Web scraping in R](https://statsandr.com/blog/web-scraping-in-r/)
+- [Web Scraping Blog](https://www.zenrows.com/blog)
+- [IDS - Week 06 - 05 - AE: IMDB + Web scraping](https://www.youtube.com/watch?v=PetWV5g1Xsc&ab_channel=Mine%C3%87etinkaya-Rundel)
+
+
+## Exploratory Data Analysis
+
+- [7 Steps to Mastering Exploratory Data Analysis](https://www.kdnuggets.com/7-steps-to-mastering-exploratory-data-analysis)
